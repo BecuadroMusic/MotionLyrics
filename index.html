@@ -1,21 +1,18 @@
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080910">
+  <meta name="theme-color" content="#07080d">
 
-  <title>MOTIONLYRICS | Letras Animadas para Iglesias</title>
-
-  <meta name="description"
-    content="Compra letras animadas sin fondo para ProPresenter y FreeShow. Descubre ALABA de Evan Craft en MOV y WEBM, desde $5 USD.">
+  <title>MOTIONLYRICS | Letras animadas sin fondo</title>
+  <meta name="description" content="Letras animadas en MOV para ProPresenter y WEBM para FreeShow. Explora canciones, mira las vistas previas y compra tus paquetes digitales.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,14 +20,15 @@
 <body>
 
   <!--
-  ==================================================
-  MOTIONLYRICS - ESTRUCTURA ACTUALIZADA
-  ==================================================
+  ===================================================
+  MOTIONLYRICS - ESTRUCTURA DE ARCHIVOS
+  ===================================================
 
   motionlyrics/
   |
-  |-- index.html
-  |-- style.css
+  |-- index.html       CATALOGO
+  |-- alaba.html       DETALLES DE ALABA
+  |-- style.css        ESTILOS COMPARTIDOS
   |
   |-- logo/
   |   |-- logo-freeshow.webp
@@ -41,918 +39,491 @@
       |-- archivos.webp
       |-- portada.jpg
 
-  RUTAS ACTUALIZADAS:
-  - Video: media-alaba/ALABA_A_REFF_INICIO.mp4
-  - Portada: media-alaba/portada.jpg
-  - Archivos: media-alaba/archivos.webp
+  IMPORTANTE SOBRE EL PREVIEW:
+  HTML/CSS sin JavaScript no puede ejecutar play()
+  y pause() al entrar o salir el cursor.
 
-  PAYPAL:
-  Busca REEMPLAZA_ID_PAYPAL_MOV
-  y REEMPLAZA_ID_PAYPAL_WEBM.
+  El video se reproduce automáticamente en silencio
+  y mediante CSS solamente se hace VISIBLE al
+  pasar el cursor. No aparecen controles.
 
-  Reemplaza cada URL completa por el enlace real
-  de pago correspondiente.
+  Para crear nuevas canciones:
+  - Crea otra carpeta media-nombrecancion
+  - Duplica la tarjeta del catálogo
+  - Cambia los nombres y las rutas
+  - Crea una nueva página de detalles
+  - Cambia el enlace de la tarjeta
 
-  IMPORTANTE:
-  HTML y CSS no pueden verificar pagos ni entregar
-  automáticamente un enlace privado. Para eso
-  necesitas una plataforma de entrega digital
-  conectada al proceso de pago.
-
-  ==================================================
+  ===================================================
   -->
 
 
-  <!-- ==========================================
-       NAVEGACIÓN
-  =========================================== -->
+  <!-- ===============================================
+       HEADER
+  ================================================ -->
 
-  <header class="header">
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Navegación principal">
 
-    <nav class="navbar container" aria-label="Menú principal">
-
-      <a href="#inicio" class="logo" aria-label="MOTIONLYRICS inicio">
-
-        <span class="logo-icon">
-          M<span>✦</span>
-        </span>
-
-        <span class="logo-text">
-          MOTION<span>LYRICS</span>
-        </span>
-
+      <a href="index.html" class="brand" aria-label="MOTIONLYRICS inicio">
+        <span class="brand-icon">M<span>✦</span></span>
+        <span class="brand-text">MOTION<span>LYRICS</span></span>
       </a>
 
-      <!-- Menú móvil sin JavaScript -->
+      <!-- MENÚ MÓVIL SIN JAVASCRIPT -->
+      <input type="checkbox" id="menu-switch" class="menu-switch">
 
-      <input
-        type="checkbox"
-        id="menu-toggle"
-        class="menu-toggle"
-        aria-label="Mostrar menú">
-
-      <label
-        for="menu-toggle"
-        class="menu-button"
-        aria-label="Abrir menú">
-
-        <span></span>
-        <span></span>
-        <span></span>
-
+      <label for="menu-switch" class="menu-trigger" aria-label="Mostrar menú">
+        <span></span><span></span><span></span>
       </label>
 
       <div class="nav-links">
-
         <a href="#inicio">Inicio</a>
-        <a href="#catalogo">Canciones</a>
-        <a href="#formatos">Formatos</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#como-funciona">Cómo funciona</a>
         <a href="#tutoriales">Tutoriales</a>
-        <a href="#preguntas">Preguntas</a>
 
-        <a
-          href="https://wa.me/51916138555?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20MOTIONLYRICS"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="nav-contact">
-
-          CONTACTO <span>↗</span>
-
+        <a href="https://wa.me/51916138555?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20MOTIONLYRICS"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="nav-contact">
+          CONTÁCTANOS ↗
         </a>
-
       </div>
 
     </nav>
-
   </header>
 
 
   <main>
 
-
-    <!-- ==========================================
-         PORTADA PRINCIPAL
-    =========================================== -->
+    <!-- ===============================================
+         PORTADA
+    ================================================ -->
 
     <section class="hero" id="inicio">
-
-      <div class="hero-grid"></div>
-      <div class="hero-glow hero-glow-purple"></div>
-      <div class="hero-glow hero-glow-cyan"></div>
+      <div class="hero-aura"></div>
 
       <div class="container hero-layout">
 
-        <!-- TEXTOS -->
-
-        <div class="hero-content">
+        <div class="hero-copy">
 
           <div class="eyebrow">
-
-            <span class="eyebrow-dot"></span>
-
-            MOTION GRAPHICS PARA ADORACIÓN
-
+            <span class="status-dot"></span>
+            WORSHIP MOTION DESIGN
           </div>
 
           <h1>
-            TUS LETRAS.<br>
-            <span class="gradient-text">CON VIDA.</span><br>
-            <span class="outline-text">SIN FONDO.</span>
+            LETRAS QUE<br>
+            <span>COBRAN VIDA.</span><br>
+            <em>SIN FONDO.</em>
           </h1>
 
-          <p class="hero-description">
-
-            Transforma cada canción en una experiencia
-            visual extraordinaria. Letras animadas
-            profesionales con fondo transparente para
-            tus presentaciones, cultos y transmisiones.
-
+          <p>
+            Videos de letras animadas con fondo transparente,
+            preparados para utilizarse con ProPresenter y
+            FreeShow. Elige tu canción, descubre su animación
+            y crea experiencias de adoración extraordinarias.
           </p>
 
-          <div class="hero-buttons">
-
-            <a href="#catalogo" class="button button-primary">
-
-              EXPLORAR CANCIONES
-
-              <span>↗</span>
-
+          <div class="hero-actions">
+            <a href="#catalogo" class="btn btn-lime">
+              EXPLORAR CATÁLOGO <span>↗</span>
             </a>
 
-            <a href="#tutoriales" class="button button-outline">
-
-              <span class="play-icon">▶</span>
-
-              VER TUTORIALES
-
+            <a href="#tutoriales" class="btn btn-dark">
+              VER TUTORIALES <span>→</span>
             </a>
-
           </div>
 
           <div class="hero-features">
-
-            <div class="hero-feature">
-
-              <span class="feature-icon">✦</span>
-
-              <div>
-                <strong>Fondo transparente</strong>
-                <small>Animaciones con canal alfa</small>
-              </div>
-
-            </div>
-
-            <div class="hero-feature">
-
-              <span class="feature-icon">◈</span>
-
-              <div>
-                <strong>MOV + WEBM</strong>
-                <small>ProPresenter y FreeShow</small>
-              </div>
-
-            </div>
-
+            <span>✦ CANAL ALFA</span>
+            <span>✦ MOV + WEBM</span>
+            <span>✦ CLIPS POR SECCIÓN</span>
           </div>
 
         </div>
 
 
-        <!-- ======================================
-             ANIMACIÓN CSS
+        <!-- ANIMACIÓN CON CSS PURO -->
 
-             TEXTO: ALABA A DIOS
-        ======================================= -->
+        <div class="hero-art">
 
-        <div class="hero-preview">
+          <div class="art-top">
+            <span class="signal"></span>
+            LIVE TYPE PREVIEW
+            <span class="art-alpha">ALPHA</span>
+          </div>
 
-          <div class="preview-halo"></div>
+          <div class="transparent-board">
 
-          <div class="preview-window">
+            <div class="art-glow"></div>
 
-            <div class="preview-toolbar">
-
-              <div class="window-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <span>MOTIONLYRICS / LIVE PREVIEW</span>
-
-              <span class="alpha-tag">ALPHA</span>
-
-            </div>
-
-
-            <div class="preview-stage">
-
-              <div class="stage-light"></div>
-
-              <span class="stage-corner corner-tl"></span>
-              <span class="stage-corner corner-tr"></span>
-              <span class="stage-corner corner-bl"></span>
-              <span class="stage-corner corner-br"></span>
-
-
-              <div class="animated-lyrics">
-
-                <span class="animated-overline">
-                  LEVANTA TU VOZ Y
-                </span>
-
-                <strong class="animated-main">
-                  ALABA
-                </strong>
-
-                <strong class="animated-impact">
-                  A DIOS
-                </strong>
-
-                <span class="animated-line"></span>
-
-                <span class="animated-subtitle">
-                  MOTIONLYRICS
-                </span>
-
-              </div>
-
-              <span class="preview-watermark">
-                CSS MOTION PREVIEW
-              </span>
-
-            </div>
-
-
-            <div class="preview-toolbar preview-toolbar-bottom">
-
-              <span class="preview-live">
-
-                <span class="live-dot"></span>
-
-                ANIMACIÓN EN VIVO
-
-              </span>
-
-              <div class="mini-formats">
-                <span>MOV</span>
-                <span>WEBM</span>
-              </div>
-
+            <div class="art-lyrics">
+              <span>LEVANTA TU VOZ Y</span>
+              <strong>ALABA</strong>
+              <strong class="art-highlight">A DIOS</strong>
+              <i></i>
+              <small>MOTIONLYRICS</small>
             </div>
 
           </div>
 
-
-          <div class="floating-label label-one">
-            <span>✦</span>
-            MOTION GRAPHICS
+          <div class="art-bottom">
+            <span>CSS MOTION PREVIEW</span>
+            <span>NO BACKGROUND / 16:9</span>
           </div>
-
-          <div class="floating-label label-two">
-            <span>◈</span>
-            FONDO TRANSPARENTE
-          </div>
-
-          <p class="preview-note">
-            Vista animada creada con HTML y CSS puro.
-          </p>
 
         </div>
 
       </div>
-
-
-      <div class="container hero-bottom">
-
-        <span>
-          CREATIVIDAD AL SERVICIO DE LA ADORACIÓN
-        </span>
-
-        <a href="#catalogo">
-          DESCUBRE MÁS ↓
-        </a>
-
-      </div>
-
     </section>
 
 
+    <!-- ===============================================
+         FRANJA
+    ================================================ -->
 
-    <!-- ==========================================
-         FRANJA DE CARACTERÍSTICAS
-    =========================================== -->
-
-    <section class="feature-strip">
-
-      <div class="container strip-content">
-
-        <span>✦ MOTION LYRICS</span>
-
-        <span>◈ FONDO TRANSPARENTE</span>
-
+    <div class="ticker">
+      <div class="container ticker-inner">
+        <span>✦ LETRAS ANIMADAS</span>
+        <span>✦ FONDO TRANSPARENTE</span>
         <span>✦ PROPRESENTER</span>
-
-        <span>◈ FREESHOW</span>
-
+        <span>✦ FREESHOW</span>
       </div>
-
-    </section>
-
+    </div>
 
 
-    <!-- ==========================================
-         CATÁLOGO
-    =========================================== -->
+    <!-- ===============================================
+         CATÁLOGO DIGITAL
+         DISEÑO DE CUADRÍCULA
+    ================================================ -->
 
-    <section class="catalog section" id="catalogo">
+    <section class="catalog-section section" id="catalogo">
 
       <div class="container">
 
-        <div class="section-heading">
-
+        <div class="section-intro">
           <div>
+            <span class="section-eyebrow">EXPLORE / MOTIONLYRICS</span>
 
-            <span class="section-kicker">
-              CATÁLOGO DIGITAL
-            </span>
-
-            <h2>
-              ELIGE TU<br>
-              <span class="gradient-text">
-                CANCIÓN FAVORITA.
-              </span>
-            </h2>
+            <h2>CATÁLOGO <span>DIGITAL.</span></h2>
 
             <p>
-              Reproduce una vista previa, consulta los
-              archivos incluidos y adquiere el formato
-              ideal para tu programa de presentación.
+              Explora las canciones disponibles.
+              Pasa el cursor sobre una portada para ver
+              su animación y haz clic para abrir todos
+              los detalles del producto.
             </p>
-
           </div>
 
-          <span class="section-side">
-            MOTION COLLECTION / 2026
-          </span>
-
+          <span class="catalog-collection">WORSHIP COLLECTION / 2026</span>
         </div>
 
 
-        <div class="catalog-toolbar">
+        <!--
+        LOS FILTROS FUNCIONAN CON RADIO INPUT + CSS.
+        NO NECESITAN JAVASCRIPT.
+        -->
 
-          <span>COLECCIÓN DE CANCIONES</span>
+        <div class="catalog-layout">
 
-          <span class="catalog-status">
-            <span></span>
-            VISTA PREVIA DISPONIBLE
-          </span>
+          <input type="radio" name="format-filter" id="filter-all"
+                 class="filter-radio" checked>
 
-        </div>
+          <input type="radio" name="format-filter" id="filter-mov"
+                 class="filter-radio">
 
-
-
-        <!-- ==========================================
-             PRODUCTO 01
-             ALABA - EVAN CRAFT
-
-             CARPETA: media-alaba
-        =========================================== -->
-
-        <article class="product-card">
+          <input type="radio" name="format-filter" id="filter-webm"
+                 class="filter-radio">
 
 
-          <!-- ================================
-               COLUMNA IZQUIERDA
-               VIDEO DE VISTA PREVIA
-          ================================= -->
+          <!-- FILTROS LATERALES -->
 
-          <div class="product-left">
+          <aside class="filter-sidebar" aria-label="Filtros de catálogo">
 
-            <div class="product-preview-header">
+            <div class="filter-group">
 
-              <span class="product-featured">
-                ✦ LETRA ANIMADA
-              </span>
+              <h3>FILTER / FILTROS</h3>
 
-              <span>
-                PREVIEW / 001
-              </span>
+              <span class="filter-group-title">FORMATOS</span>
 
-            </div>
+              <div class="filter-options">
 
+                <label for="filter-all" class="filter-pill filter-pill-all">
+                  TODOS
+                </label>
 
-            <!--
-            VIDEO ACTUALIZADO:
+                <label for="filter-mov" class="filter-pill filter-pill-mov">
+                  <span class="filter-small-dot purple-dot"></span>
+                  MOV
+                </label>
 
-            media-alaba/ALABA_A_REFF_INICIO.mp4
-
-            PORTADA:
-
-            media-alaba/portada.jpg
-            -->
-
-            <div class="video-frame">
-
-              <video
-                class="product-video"
-                controls
-                playsinline
-                preload="metadata"
-                poster="media-alaba/portada.jpg"
-                aria-label="Vista previa de ALABA de Evan Craft">
-
-                <source
-                  src="media-alaba/ALABA_A_REFF_INICIO.mp4"
-                  type="video/mp4">
-
-                Tu navegador no admite este video.
-
-              </video>
-
-            </div>
-
-
-            <div class="preview-meta">
-
-              <span class="preview-meta-live">
-
-                <span></span>
-
-                VISTA PREVIA GRATUITA
-
-              </span>
-
-              <span>16:9 / MP4</span>
-
-            </div>
-
-
-            <div class="preview-message">
-
-              <span class="preview-message-icon">▶</span>
-
-              <div>
-
-                <strong>
-                  MIRA LA ANIMACIÓN ANTES DE COMPRAR
-                </strong>
-
-                <p>
-                  Conoce el estilo de las letras,
-                  las transiciones y los movimientos.
-                  El paquete completo se entrega
-                  después de la compra.
-                </p>
+                <label for="filter-webm" class="filter-pill filter-pill-webm">
+                  <span class="filter-small-dot cyan-dot"></span>
+                  WEBM
+                </label>
 
               </div>
 
             </div>
 
 
-            <div class="preview-extra">
-
-              <span>✦ VIDEO DIGITAL</span>
-              <span>✦ WORSHIP LYRICS</span>
-              <span>✦ MOTION DESIGN</span>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- ================================
-               COLUMNA DERECHA
-               INFORMACIÓN
-          ================================= -->
-
-          <div class="product-right">
-
-            <div class="product-heading-row">
-
-              <span class="product-kicker">
-                WORSHIP / MOTION LYRICS
-              </span>
-
-              <span class="product-code">
-                ML-001
-              </span>
-
-            </div>
-
-
-            <h3 class="product-title">
-              ALABA
-            </h3>
-
-            <p class="product-artist">
-              EVAN CRAFT
-            </p>
-
-            <div class="product-accent"></div>
-
-            <p class="product-description">
-
-              Dale vida a las letras de esta canción
-              con animaciones modernas, efectos visuales
-              y transiciones diseñadas para mejorar
-              tus momentos de adoración.
-
-            </p>
-
-
-            <div class="product-tags">
-
-              <span>✦ MOTION GRAPHICS</span>
-
-              <span>◈ SIN FONDO</span>
-
-              <span>CLIPS INDIVIDUALES</span>
-
-            </div>
-
-
-
-            <!-- =====================================
-                 ¿QUÉ INCLUYE ESTE PRODUCTO?
-
-                 IMAGEN ACTUALIZADA:
-
-                 media-alaba/archivos.webp
-            ====================================== -->
-
-            <details class="product-includes" open>
-
-              <summary>
-
-                <span class="includes-summary-title">
-
-                  <span class="includes-symbol">▣</span>
-
-                  ¿QUÉ INCLUYE ESTE PRODUCTO?
-
-                </span>
-
-                <span class="details-plus">+</span>
-
-              </summary>
-
-
-              <div class="includes-content">
-
-                <div class="includes-intro">
-
-                  <strong>
-                    REVISA LOS ARCHIVOS ANTES DE COMPRAR
-                  </strong>
-
-                  <p>
-                    Aquí puedes ver una imagen con
-                    los archivos del paquete de ALABA.
-                    Presiona sobre ella para ampliarla
-                    y revisar sus nombres.
-                  </p>
-
-                </div>
-
-
-
-                <!-- IMAGEN: archivos.webp -->
-
-                <figure class="included-files">
-
-                  <a
-                    href="media-alaba/archivos.webp"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="included-image-link"
-                    title="Abrir imagen de archivos incluidos">
-
-                    <img
-                      src="media-alaba/archivos.webp"
-                      alt="Archivos incluidos en el paquete de letras animadas ALABA - Evan Craft"
-                      loading="lazy">
-
-                    <span class="image-zoom-label">
-                      <span>⌕</span>
-                      VER IMAGEN COMPLETA ↗
-                    </span>
-
-                  </a>
-
-
-                  <figcaption>
-                    Archivos del paquete ALABA – EVAN CRAFT
-                  </figcaption>
-
-                </figure>
-
-
-
-                <!-- CARACTERÍSTICAS INCLUIDAS -->
-
-                <div class="included-features">
-
-                  <div class="included-feature">
-
-                    <span class="included-check">✓</span>
-
-                    <div>
-
-                      <strong>Clips separados</strong>
-
-                      <small>
-                        Videos independientes según
-                        las partes de la canción incluidas
-                        en el paquete.
-                      </small>
-
-                    </div>
-
-                  </div>
-
-
-                  <div class="included-feature">
-
-                    <span class="included-check">✓</span>
-
-                    <div>
-
-                      <strong>Fondo transparente</strong>
-
-                      <small>
-                        Letras animadas con canal alfa
-                        para software compatible.
-                      </small>
-
-                    </div>
-
-                  </div>
-
-
-                  <div class="included-feature">
-
-                    <span class="included-check">✓</span>
-
-                    <div>
-
-                      <strong>Formato seleccionado</strong>
-
-                      <small>
-                        Recibirás el paquete MOV o WEBM
-                        según la opción que compres.
-                      </small>
-
-                    </div>
-
-                  </div>
-
-
-                  <div class="included-feature">
-
-                    <span class="included-check">✓</span>
-
-                    <div>
-
-                      <strong>Entrega digital</strong>
-
-                      <small>
-                        Archivos disponibles mediante
-                        el sistema de entrega utilizado
-                        por la tienda.
-                      </small>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-
-
-                <div class="includes-note">
-
-                  <span>ⓘ</span>
-
-                  <p>
-                    Los formatos MOV y WEBM se venden
-                    por separado. Revisa la imagen
-                    para conocer las secciones que
-                    forman parte del producto.
-                  </p>
-
-                </div>
-
+            <div class="filter-group">
+              <span class="filter-group-title">COMPATIBILIDAD</span>
+
+              <div class="software-filter-note">
+                <img src="logo/propresenter-logo.webp"
+                     alt="ProPresenter">
+                <span>ProPresenter / MOV</span>
               </div>
 
-            </details>
-
-
-
-            <!-- =====================================
-                 BOTONES DE COMPRA
-                 PRECIO: $5 USD
-            ====================================== -->
-
-            <div class="purchase-heading">
-
-              <div>
-
-                <span class="purchase-heading-title">
-                  SELECCIONA TU FORMATO
-                </span>
-
-                <p>
-                  Cada formato se adquiere por separado.
-                </p>
-
+              <div class="software-filter-note">
+                <img src="logo/logo-freeshow.webp"
+                     alt="FreeShow">
+                <span>FreeShow / WEBM</span>
               </div>
-
-              <span class="purchase-arrow">↓</span>
-
             </div>
 
 
+            <div class="filter-group">
+              <span class="filter-group-title">CÓMO FUNCIONA</span>
 
-            <!-- =====================================
-                 PROPRESENTER - MOV
-
-                 PRECIO: $5
-
-                 REEMPLAZA EL href COMPLETO POR
-                 TU ENLACE DE PAYPAL PARA MOV
-            ====================================== -->
-
-            <a
-              href="https://www.paypal.com/ncp/payment/REEMPLAZA_ID_PAYPAL_MOV"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="purchase-option option-pro"
-              aria-label="Comprar ALABA en MOV para ProPresenter por 5 dólares">
-
-              <span class="purchase-software-logo">
-
-                <img
-                  src="logo/propresenter-logo.webp"
-                  alt="Logo de ProPresenter"
-                  loading="lazy">
-
-              </span>
+              <p class="filter-description">
+                Cada tarjeta representa un formato
+                de descarga. Ambos formatos se venden
+                por separado.
+              </p>
+            </div>
 
 
-              <span class="purchase-description">
+            <div class="sidebar-contact">
+              <span>✦ MOTIONLYRICS</span>
 
-                <span class="purchase-format">
-                  FORMATO .MOV
-                </span>
-
-                <strong>
-                  ProPresenter
-                </strong>
-
-                <small>
-                  Comprar paquete MOV
-                </small>
-
-              </span>
-
-
-              <span class="purchase-price">
-
-                <strong>$5.00</strong>
-
-                <small>USD</small>
-
-              </span>
-
-
-              <span class="purchase-link-icon">
-                ↗
-              </span>
-
-            </a>
-
-
-
-            <!-- =====================================
-                 FREESHOW - WEBM
-
-                 PRECIO: $5
-
-                 REEMPLAZA EL href COMPLETO POR
-                 TU ENLACE DE PAYPAL PARA WEBM
-            ====================================== -->
-
-            <a
-              href="https://www.paypal.com/ncp/payment/REEMPLAZA_ID_PAYPAL_WEBM"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="purchase-option option-free"
-              aria-label="Comprar ALABA en WEBM para FreeShow por 5 dólares">
-
-              <span class="purchase-software-logo">
-
-                <img
-                  src="logo/logo-freeshow.webp"
-                  alt="Logo de FreeShow"
-                  loading="lazy">
-
-              </span>
-
-
-              <span class="purchase-description">
-
-                <span class="purchase-format">
-                  FORMATO .WEBM
-                </span>
-
-                <strong>
-                  FreeShow
-                </strong>
-
-                <small>
-                  Comprar paquete WEBM
-                </small>
-
-              </span>
-
-
-              <span class="purchase-price">
-
-                <strong>$5.00</strong>
-
-                <small>USD</small>
-
-              </span>
-
-
-              <span class="purchase-link-icon">
-                ↗
-              </span>
-
-            </a>
-
-
-
-            <div class="payment-info">
-
-              <span>♢</span>
+              <h4>¿BUSCAS OTRA CANCIÓN?</h4>
 
               <p>
-                Pago mediante PayPal. La descarga
-                se habilita según el sistema de
-                entrega digital que configures.
+                Solicita una canción o un diseño
+                personalizado.
               </p>
+
+              <a
+                href="https://wa.me/51916138555?text=Hola%2C%20quisiera%20solicitar%20una%20canci%C3%B3n%20animada"
+                target="_blank"
+                rel="noopener noreferrer">
+                SOLICITAR ↗
+              </a>
+            </div>
+
+          </aside>
+
+
+
+          <!-- RESULTADOS -->
+
+          <div class="catalog-results">
+
+            <div class="results-toolbar">
+
+              <span class="results-counter count-all">2 RESULTADOS</span>
+              <span class="results-counter count-one">1 RESULTADO</span>
+
+              <span class="sort-label">
+                ORDENADO POR:
+                <strong>MÁS RECIENTES</strong>
+              </span>
 
             </div>
 
 
-            <a
-              href="https://wa.me/51916138555?text=Hola%2C%20quiero%20consultar%20sobre%20ALABA%20de%20Evan%20Craft"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="product-contact">
 
-              ¿TIENES DUDAS SOBRE ESTA CANCIÓN? ↗
+            <!-- =====================================
+                 TARJETAS DE PRODUCTOS
 
-            </a>
+                 DUPLICA CADA <a class="media-card">
+                 PARA AGREGAR MÁS CANCIONES.
+
+                 IMPORTANTE:
+                 El archivo MP4 se mantiene reproduciendo
+                 en silencio, pero CSS solo lo deja visible
+                 cuando el mouse entra al cuadro.
+            ====================================== -->
+
+            <div class="product-grid">
+
+
+              <!-- TARJETA 01 - ALABA MOV -->
+
+              <a href="alaba.html"
+                 class="media-card card-mov"
+                 aria-label="Abrir detalles de ALABA de Evan Craft en MOV">
+
+                <div class="card-screen hover-media">
+
+                  <img
+                    class="media-poster"
+                    src="media-alaba/portada.jpg"
+                    alt="Portada de ALABA de Evan Craft"
+                    loading="lazy">
+
+                  <video
+                    class="hover-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    poster="media-alaba/portada.jpg"
+                    aria-hidden="true">
+
+                    <source
+                      src="media-alaba/ALABA_A_REFF_INICIO.mp4"
+                      type="video/mp4">
+
+                  </video>
+
+                  <span class="card-badge">✦ MOTION</span>
+                  <span class="format-badge badge-mov">.MOV</span>
+
+                  <div class="card-screen-shade"></div>
+
+                  <span class="card-watermark">
+                    MOTIONLYRICS
+                  </span>
+
+                </div>
+
+                <div class="card-info">
+                  <h3>ALABA – EVAN CRAFT .MOV</h3>
+                  <span>PARA PROPRESENTER</span>
+                </div>
+
+              </a>
+
+
+
+              <!-- TARJETA 02 - ALABA WEBM -->
+
+              <a href="alaba.html"
+                 class="media-card card-webm"
+                 aria-label="Abrir detalles de ALABA de Evan Craft en WEBM">
+
+                <div class="card-screen hover-media">
+
+                  <img
+                    class="media-poster"
+                    src="media-alaba/portada.jpg"
+                    alt="Portada de ALABA de Evan Craft para FreeShow"
+                    loading="lazy">
+
+                  <video
+                    class="hover-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    poster="media-alaba/portada.jpg"
+                    aria-hidden="true">
+
+                    <source
+                      src="media-alaba/ALABA_A_REFF_INICIO.mp4"
+                      type="video/mp4">
+
+                  </video>
+
+                  <span class="card-badge">✦ MOTION</span>
+                  <span class="format-badge badge-webm">.WEBM</span>
+
+                  <div class="card-screen-shade"></div>
+
+                  <span class="card-watermark">
+                    MOTIONLYRICS
+                  </span>
+
+                </div>
+
+                <div class="card-info">
+                  <h3>ALABA – EVAN CRAFT .WEBM</h3>
+                  <span>PARA FREESHOW</span>
+                </div>
+
+              </a>
+
+
+            </div>
+
+
+            <!-- NOTA DEL CATÁLOGO -->
+
+            <div class="catalog-end">
+              <span>✦</span>
+              MÁS CANCIONES SE AGREGARÁN A LA COLECCIÓN
+            </div>
 
           </div>
 
-        </article>
+        </div>
+
+      </div>
+
+    </section>
 
 
 
-        <!-- =====================================
-             SOLICITAR OTRAS CANCIONES
-        ====================================== -->
+    <!-- ===============================================
+         CAMBIAR FONDO / LOOPS
+    ================================================ -->
 
-        <div class="catalog-bottom">
+    <section class="loop-section section" id="como-funciona">
 
-          <span class="catalog-bottom-icon">✦</span>
+      <div class="container loop-layout">
 
-          <div>
+        <div class="loop-graphic">
 
-            <strong>
-              ¿NO ENCUENTRAS TU CANCIÓN?
-            </strong>
+          <div class="loop-demo-background">
+            <div class="loop-orb"></div>
 
-            <p>
-              Cuéntanos qué canción o animación
-              te gustaría encontrar en MOTIONLYRICS.
-            </p>
-
+            <div class="loop-demo-text">
+              <span>LET YOUR WORSHIP</span>
+              <strong>COBRE VIDA</strong>
+            </div>
           </div>
 
+          <span class="loop-note">
+            CAPAS + TRANSPARENCIA
+          </span>
 
-          <a
-            href="https://wa.me/51916138555?text=Hola%2C%20quisiera%20solicitar%20una%20canci%C3%B3n%20animada"
-            target="_blank"
-            rel="noopener noreferrer">
+        </div>
 
-            SOLICITAR CANCIÓN ↗
 
+        <div class="loop-copy">
+
+          <span class="section-eyebrow">
+            PERSONALIZA TU ESCENARIO
+          </span>
+
+          <h2>
+            CAMBIA EL FONDO.<br>
+            <span>MANTÉN EL MENSAJE.</span>
+          </h2>
+
+          <p>
+            Combina tus letras animadas con cualquier
+            loop de video en movimiento, fondos
+            cinematográficos, paisajes, luces o
+            imágenes que elijas.
+          </p>
+
+          <p>
+            Gracias al canal alfa, las letras pueden
+            superponerse sobre los fondos y videos
+            compatibles de tu presentación, sin un
+            rectángulo de color detrás del texto.
+          </p>
+
+          <a href="alaba.html#contenido" class="inline-link">
+            DESCUBRE CÓMO FUNCIONA ↗
           </a>
 
         </div>
@@ -963,421 +534,97 @@
 
 
 
-    <!-- =====================================
-         FORMATOS
-    ====================================== -->
+    <!-- ===============================================
+         TUTORIALES DE YOUTUBE
+    ================================================ -->
 
-    <section class="formats section" id="formatos">
+    <section class="tutorial-section section" id="tutoriales">
 
       <div class="container">
 
-        <div class="section-heading center">
+        <div class="section-intro">
+          <div>
+            <span class="section-eyebrow">LEARN / MOTIONLYRICS</span>
 
-          <span class="section-kicker">
-            COMPATIBILIDAD Y FORMATOS
-          </span>
+            <h2>APRENDE A <span>UTILIZARLOS.</span></h2>
 
-          <h2>
-            DOS FORMATOS.<br>
-            <span class="gradient-text">
-              MÁS CREATIVIDAD.
-            </span>
-          </h2>
-
-          <p>
-            Elige la versión adecuada para tu software
-            y utiliza los videos sobre tus fondos,
-            cámaras y presentaciones.
-          </p>
-
+            <p>
+              Descubre cómo importar y sincronizar
+              tus letras animadas en cada programa.
+            </p>
+          </div>
         </div>
 
 
-        <div class="format-grid">
+        <div class="tutorial-grid">
 
+          <article class="tutorial-card">
 
-          <!-- PROPRESENTER -->
-
-          <article class="format-card format-card-pro">
-
-            <div class="format-top">
-
-              <span>FORMATO DIGITAL / 01</span>
-
-              <span>✦</span>
-
+            <div class="tutorial-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/bg4_595I6nU"
+                title="Tutorial de letras animadas para ProPresenter"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
             </div>
 
-
-            <div class="format-logo">
+            <div class="tutorial-copy">
 
               <img
                 src="logo/propresenter-logo.webp"
                 alt="ProPresenter"
                 loading="lazy">
 
-            </div>
+              <div>
+                <span>PROPRESENTER / TUTORIAL</span>
+                <h3>LETRAS ANIMADAS EN PROPRESENTER</h3>
 
-
-            <div class="format-large">.MOV</div>
-
-            <span class="format-software">
-              PARA PROPRESENTER
-            </span>
-
-            <h3>
-              MOVIMIENTO<br>
-              SIN LÍMITES.
-            </h3>
-
-            <p>
-              Letras animadas en formato MOV con
-              canal alfa, preparadas para integrarse
-              en versiones de ProPresenter compatibles
-              con el códec del archivo.
-            </p>
-
-            <div class="format-points">
-
-              <span>✓ Fondo transparente</span>
-              <span>✓ Clips independientes</span>
-              <span>✓ Letras animadas</span>
+                <a href="https://youtu.be/bg4_595I6nU"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  VER TUTORIAL ↗
+                </a>
+              </div>
 
             </div>
-
-
-            <a href="#catalogo" class="format-link">
-
-              EXPLORAR CANCIONES MOV
-
-              <span>↗</span>
-
-            </a>
 
           </article>
 
 
+          <article class="tutorial-card">
 
-          <!-- FREESHOW -->
-
-          <article class="format-card format-card-free">
-
-            <div class="format-top">
-
-              <span>FORMATO DIGITAL / 02</span>
-
-              <span>◈</span>
-
+            <div class="tutorial-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/HTYMs-iJjlw"
+                title="Tutorial de letras animadas para FreeShow"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
             </div>
 
-
-            <div class="format-logo">
+            <div class="tutorial-copy">
 
               <img
                 src="logo/logo-freeshow.webp"
                 alt="FreeShow"
                 loading="lazy">
 
-            </div>
-
-
-            <div class="format-large">.WEBM</div>
-
-            <span class="format-software">
-              PARA FREESHOW
-            </span>
-
-            <h3>
-              CADA PALABRA<br>
-              COBRA VIDA.
-            </h3>
-
-            <p>
-              Letras animadas en formato WEBM
-              con transparencia, para flujos de
-              trabajo de FreeShow compatibles con
-              el códec y canal alfa utilizado.
-            </p>
-
-            <div class="format-points">
-
-              <span>✓ Fondo transparente</span>
-              <span>✓ Clips independientes</span>
-              <span>✓ Letras animadas</span>
-
-            </div>
-
-
-            <a href="#catalogo" class="format-link">
-
-              EXPLORAR CANCIONES WEBM
-
-              <span>↗</span>
-
-            </a>
-
-          </article>
-
-        </div>
-
-
-        <p class="formats-notice">
-          La compatibilidad depende de la versión
-          del programa, sistema operativo y códec.
-          Verifica que tu configuración admita
-          la transparencia del archivo.
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         CÓMO FUNCIONA
-    ====================================== -->
-
-    <section class="process section">
-
-      <div class="container">
-
-        <div class="section-heading center">
-
-          <span class="section-kicker">
-            UN PROCESO SENCILLO
-          </span>
-
-          <h2>
-            DE TU CANCIÓN<br>
-            <span class="gradient-text">
-              A TU PANTALLA.
-            </span>
-          </h2>
-
-        </div>
-
-
-        <div class="process-grid">
-
-
-          <div class="process-card">
-
-            <span class="process-number">01</span>
-
-            <div class="process-icon">♫</div>
-
-            <h3>EXPLORA</h3>
-
-            <p>
-              Encuentra tu canción favorita
-              dentro del catálogo.
-            </p>
-
-          </div>
-
-
-          <div class="process-card">
-
-            <span class="process-number">02</span>
-
-            <div class="process-icon">▷</div>
-
-            <h3>VISUALIZA</h3>
-
-            <p>
-              Reproduce la muestra y revisa
-              los archivos incluidos.
-            </p>
-
-          </div>
-
-
-          <div class="process-card">
-
-            <span class="process-number">03</span>
-
-            <div class="process-icon">↓</div>
-
-            <h3>COMPRA</h3>
-
-            <p>
-              Elige MOV o WEBM y realiza
-              el pago correspondiente.
-            </p>
-
-          </div>
-
-
-          <div class="process-card">
-
-            <span class="process-number">04</span>
-
-            <div class="process-icon">✦</div>
-
-            <h3>PROYECTA</h3>
-
-            <p>
-              Obtén los archivos e impórtalos
-              a tu programa de presentación.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         TUTORIALES DE YOUTUBE
-    ====================================== -->
-
-    <section class="tutorials section" id="tutoriales">
-
-      <div class="container">
-
-        <div class="section-heading center">
-
-          <span class="section-kicker">
-            APRENDE PASO A PASO
-          </span>
-
-          <h2>
-            DESCARGA. IMPORTA.<br>
-            <span class="gradient-text">
-              DALE VIDA.
-            </span>
-          </h2>
-
-          <p>
-            Descubre cómo importar y utilizar
-            las letras animadas con estos tutoriales.
-          </p>
-
-        </div>
-
-
-        <div class="tutorial-grid">
-
-
-          <!-- PROPRESENTER -->
-
-          <article class="tutorial-card">
-
-            <div class="tutorial-video">
-
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/bg4_595I6nU"
-                title="Tutorial de letras animadas en ProPresenter"
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
-
-            </div>
-
-
-            <div class="tutorial-body">
-
-              <div class="tutorial-heading">
-
-                <img
-                  src="logo/propresenter-logo.webp"
-                  alt="ProPresenter"
-                  loading="lazy">
-
-                <span>PROPRESENTER TUTORIAL</span>
-
+              <div>
+                <span>FREESHOW / TUTORIAL</span>
+                <h3>LETRAS ANIMADAS EN FREESHOW</h3>
+
+                <a href="https://youtu.be/HTYMs-iJjlw"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  VER TUTORIAL ↗
+                </a>
               </div>
 
-
-              <h3>
-                LETRAS ANIMADAS<br>
-                EN PROPRESENTER
-              </h3>
-
-              <p>
-                Aprende a importar tus videos MOV
-                y preparar las animaciones
-                para tus presentaciones.
-              </p>
-
-
-              <a
-                href="https://youtu.be/bg4_595I6nU"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="tutorial-link">
-
-                VER EN YOUTUBE ↗
-
-              </a>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- FREESHOW -->
-
-          <article class="tutorial-card">
-
-            <div class="tutorial-video">
-
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/HTYMs-iJjlw"
-                title="Tutorial de letras animadas en FreeShow"
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
-
-            </div>
-
-
-            <div class="tutorial-body">
-
-              <div class="tutorial-heading">
-
-                <img
-                  src="logo/logo-freeshow.webp"
-                  alt="FreeShow"
-                  loading="lazy">
-
-                <span>FREESHOW TUTORIAL</span>
-
-              </div>
-
-
-              <h3>
-                LETRAS ANIMADAS<br>
-                EN FREESHOW
-              </h3>
-
-              <p>
-                Aprende a utilizar los archivos WEBM
-                e integrarlos en las presentaciones
-                de FreeShow.
-              </p>
-
-
-              <a
-                href="https://youtu.be/HTYMs-iJjlw"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="tutorial-link">
-
-                VER EN YOUTUBE ↗
-
-              </a>
-
             </div>
 
           </article>
@@ -1389,238 +636,30 @@
     </section>
 
 
+    <!-- ===============================================
+         CONTACTO
+    ================================================ -->
 
-    <!-- =====================================
-         MENSAJE MOTIVACIONAL
-    ====================================== -->
+    <section class="contact-band">
 
-    <section class="inspiration">
-
-      <div class="container">
-
-        <div class="inspiration-panel">
-
-          <div class="inspiration-glow"></div>
-
-          <span class="inspiration-kicker">
-            BEYOND THE LYRICS
-          </span>
-
-          <h2>
-            NO SOLO<br>
-            <span>PROYECTES.</span><br>
-            <em>INSPIRA.</em>
-          </h2>
-
-          <p>
-            Detrás de cada letra hay un mensaje.
-            Y detrás de cada mensaje, una oportunidad
-            para tocar corazones.
-          </p>
-
-
-          <a href="#catalogo" class="button button-light">
-
-            DESCUBRIR CANCIONES ↗
-
-          </a>
-
-          <span class="inspiration-decoration">✦</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         PREGUNTAS FRECUENTES
-    ====================================== -->
-
-    <section class="faq section" id="preguntas">
-
-      <div class="container faq-grid">
-
-        <div class="faq-intro">
-
-          <span class="section-kicker">
-            CENTRO DE AYUDA
-          </span>
-
-          <h2>
-            PREGUNTAS<br>
-            <span class="gradient-text">
-              FRECUENTES.
-            </span>
-          </h2>
-
-          <p>
-            Todo lo que necesitas saber sobre
-            las letras animadas y sus formatos.
-          </p>
-
-
-          <a
-            href="https://wa.me/51916138555"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="faq-contact">
-
-            HABLAR CON NOSOTROS ↗
-
-          </a>
-
-        </div>
-
-
-        <div class="faq-items">
-
-
-          <details>
-
-            <summary>
-              ¿Qué incluye la canción ALABA?
-              <span>+</span>
-            </summary>
-
-            <p>
-              En el apartado "¿QUÉ INCLUYE ESTE PRODUCTO?"
-              encontrarás una imagen que muestra los
-              archivos del paquete para que puedas
-              revisarlos antes de comprar.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              ¿Puedo mirar el video antes de comprar?
-              <span>+</span>
-            </summary>
-
-            <p>
-              Sí. Puedes reproducir una vista previa
-              de la letra animada gratuitamente
-              desde el catálogo.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              ¿Los archivos tienen fondo transparente?
-              <span>+</span>
-            </summary>
-
-            <p>
-              Los productos anunciados con transparencia
-              están preparados con canal alfa.
-              Tu programa debe admitir el códec utilizado.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              ¿Cuánto cuesta cada formato?
-              <span>+</span>
-            </summary>
-
-            <p>
-              El paquete MOV para ProPresenter cuesta
-              $5.00 USD. El paquete WEBM para FreeShow
-              también cuesta $5.00 USD.
-              Los dos formatos se venden por separado.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              ¿Cómo recibiré los videos después de pagar?
-              <span>+</span>
-            </summary>
-
-            <p>
-              Recibirás los archivos mediante el
-              sistema de entrega digital que tenga
-              configurado la tienda. Si se habilita
-              una plataforma de descarga automática,
-              el enlace será entregado al confirmar
-              el pago.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              ¿Puedo solicitar otra canción?
-              <span>+</span>
-            </summary>
-
-            <p>
-              Puedes contactarnos por WhatsApp
-              para consultar nuevos diseños
-              o canciones personalizadas.
-            </p>
-
-          </details>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         CONTACTO FINAL
-    ====================================== -->
-
-    <section class="contact-banner">
-
-      <div class="container contact-grid">
+      <div class="container contact-layout">
 
         <div>
+          <span class="section-eyebrow">CONTACT / MOTIONLYRICS</span>
 
-          <span class="section-kicker">
-            ¿TIENES UNA IDEA?
-          </span>
-
-          <h2>
-            HAGÁMOSLA<br>
-            <span>REALIDAD.</span>
-          </h2>
+          <h2>HAZ QUE CADA <span>PALABRA INSPIRE.</span></h2>
 
           <p>
-            Contacta con nosotros para consultar
-            nuevas canciones o diseños personalizados.
+            ¿Tienes una canción en mente?
+            Cuéntanos tu idea.
           </p>
-
         </div>
 
-
-        <a
-          href="https://wa.me/51916138555?text=Hola%2C%20quiero%20contactar%20con%20MOTIONLYRICS"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-button">
-
-          HABLAR POR WHATSAPP <span>↗</span>
-
+        <a href="https://wa.me/51916138555?text=Hola%2C%20quiero%20consultar%20sobre%20MOTIONLYRICS"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-lime">
+          ESCRIBIR POR WHATSAPP ↗
         </a>
 
       </div>
@@ -1630,122 +669,71 @@
   </main>
 
 
-
-  <!-- =====================================
-       PIE DE PÁGINA
-  ====================================== -->
+  <!-- ===============================================
+       FOOTER
+  ================================================ -->
 
   <footer class="footer">
 
     <div class="container">
 
-      <div class="footer-top">
+      <div class="footer-upper">
 
-        <div class="footer-brand">
-
-          <a href="#inicio" class="logo">
-
-            <span class="logo-icon">
-              M<span>✦</span>
-            </span>
-
-            <span class="logo-text">
-              MOTION<span>LYRICS</span>
-            </span>
-
+        <div>
+          <a href="index.html" class="brand">
+            <span class="brand-icon">M<span>✦</span></span>
+            <span class="brand-text">MOTION<span>LYRICS</span></span>
           </a>
-
 
           <p>
-            Creatividad en movimiento.<br>
-            Palabras que inspiran.<br>
-            Mensajes que trascienden.
+            Creatividad en movimiento.
+            Letras que inspiran y mensajes
+            que trascienden.
           </p>
-
         </div>
 
-
         <div class="footer-links">
-
-          <h4>EXPLORAR</h4>
-
-          <a href="#inicio">Inicio</a>
-          <a href="#catalogo">Canciones</a>
-          <a href="#formatos">Formatos</a>
+          <strong>EXPLORAR</strong>
+          <a href="#catalogo">Catálogo</a>
+          <a href="#como-funciona">Cómo funciona</a>
           <a href="#tutoriales">Tutoriales</a>
-          <a href="#preguntas">Preguntas</a>
-
         </div>
 
-
         <div class="footer-links">
-
-          <h4>CONTACTO</h4>
-
-          <a
-            href="https://wa.me/51916138555"
-            target="_blank"
-            rel="noopener noreferrer">
-
+          <strong>CONTACTO</strong>
+          <a href="https://wa.me/51916138555"
+             target="_blank" rel="noopener noreferrer">
             WhatsApp ↗
-
           </a>
-
-          <a href="tel:+51916138555">
-            +51 916 138 555
-          </a>
-
-          <span>Atención digital</span>
-
+          <a href="tel:+51916138555">+51 916 138 555</a>
         </div>
 
       </div>
 
 
+      <div class="bible-footer">
 
-      <!-- FRASE BÍBLICA -->
-
-      <div class="bible-message">
-
-        <span class="bible-star">✦</span>
-
-        <span class="bible-label">
-          UN MENSAJE PARA TI
-        </span>
+        <span>✦ UNA PALABRA DE FE</span>
 
         <blockquote>
-          «Todo lo puedo en Cristo<br>
-          que me fortalece».
+          «Todo lo puedo en Cristo que me fortalece».
         </blockquote>
 
-        <span class="bible-reference">
-          FILIPENSES 4:13
-        </span>
+        <strong>FILIPENSES 4:13</strong>
 
         <p>
-          Nunca dejes de soñar, crear y compartir
-          el talento que Dios ha puesto en tus manos.
-          Una pequeña idea puede convertirse en una
-          gran bendición para alguien más.
+          Nunca dejes de crear con el talento que Dios
+          ha puesto en tus manos. Lo que hoy comienza
+          como una idea puede convertirse en una
+          bendición para muchas personas.
         </p>
-
-        <span class="bible-signature">
-          CON FE, CREATIVIDAD Y PROPÓSITO.
-        </span>
 
       </div>
 
 
-      <div class="footer-bottom">
-
-        <span>
-          © 2026 MOTIONLYRICS. TODOS LOS DERECHOS RESERVADOS.
-        </span>
-
-        <span>
-          CREADO PARA INSPIRAR ✦
-        </span>
-
+      <div class="copyright">
+        <span>© 2026 MOTIONLYRICS. TODOS LOS DERECHOS RESERVADOS.</span>
+        <span>HECHO CON FE Y CREATIVIDAD ✦</span>
       </div>
 
     </div>
@@ -1754,28 +742,19 @@
 
 
 
-  <!-- =====================================
-       WHATSAPP FLOTANTE
-  ====================================== -->
+  <!-- WHATSAPP FLOTANTE -->
 
   <a
-    href="https://wa.me/51916138555?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20MOTIONLYRICS"
+    href="https://wa.me/51916138555?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20MOTIONLYRICS"
     class="whatsapp-float"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Contactar por WhatsApp">
 
-    <span class="whatsapp-tooltip">
-      ¿Necesitas ayuda?
-    </span>
-
-    <svg
-      viewBox="0 0 32 32"
-      fill="currentColor"
-      aria-hidden="true">
-
-      <path d="M16 .8A15.1 15.1 0 0 0 2.9 23.5L.8 31.2l7.9-2.1A15.2 15.2 0 1 0 16 .8Zm0 27.7a12.4 12.4 0 0 1-6.3-1.7l-.5-.3-4.7 1.2 1.3-4.5-.3-.5A12.5 12.5 0 1 1 16 28.5Zm6.9-9.3c-.4-.2-2.2-1.1-2.6-1.2-.3.4-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.7c.1-.2.1-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.2s1.4 3.7 1.6 3.9c.2.3 2.8 4.4 6.8 6 .9.4 1.7.6 2.2.7 1 .3 1.9.2 2.6.2.8-.1 2.2-.9 2.5-1.7.3-.8.3-1.5.2-1.7-.1-.2-.3-.3-.7-.5Z"/>
-
+    <svg viewBox="0 0 32 32"
+         fill="currentColor"
+         aria-hidden="true">
+      <path d="M16 .8A15.1 15.1 0 0 0 2.9 23.5L.8 31.2l7.9-2.1A15.2 15.2 0 1 0 16 .8Zm0 27.7a12.4 12.4 0 0 1-6.3-1.7l-.5-.3-4.7 1.2 1.3-4.5-.3-.5A12.5 12.5 0 1 1 16 28.5Zm6.9-9.3c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.7c.1-.2.1-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.2s1.4 3.7 1.6 3.9c.2.3 2.8 4.4 6.8 6 .9.4 1.7.6 2.2.7 1 .3 1.9.2 2.6.2.8-.1 2.2-.9 2.5-1.7.3-.8.3-1.5.2-1.7-.1-.2-.3-.3-.7-.5Z"/>
     </svg>
 
   </a>
