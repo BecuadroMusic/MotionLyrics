@@ -1,20 +1,23 @@
 
-/* ============================================
+/* =============================================
    MOTIONLYRICS
-   PREMIUM DIGITAL MOTION STORE
+   PREMIUM DIGITAL STORE
    HTML + CSS PURO
-============================================ */
+============================================= */
 
-/* VARIABLES */
+
+/* =============================================
+   VARIABLES
+============================================= */
 
 :root {
-  --bg: #080911;
+  --bg: #080910;
   --bg-soft: #0e101c;
   --surface: #171927;
   --surface-2: #1d1f30;
 
   --white: #ffffff;
-  --text: #f4f2ff;
+  --text: #f5f3ff;
   --muted: #a1a2b9;
   --subtle: #777993;
 
@@ -27,10 +30,10 @@
   --gradient:
     linear-gradient(
       110deg,
-      #dacbff 0%,
+      #dacbff,
       #b298ff 42%,
       #8163f3 72%,
-      #72e7f1 100%
+      #72e7f1
     );
 
   --font-body: "DM Sans", sans-serif;
@@ -39,12 +42,14 @@
 }
 
 
-/* RESET */
+/* =============================================
+   RESET
+============================================= */
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -115,6 +120,7 @@ h4 {
 .section-kicker {
   display: inline-block;
   margin-bottom: 20px;
+
   color: var(--purple);
   font-family: var(--font-tech);
   font-size: 10px;
@@ -162,20 +168,26 @@ h4 {
 }
 
 
-/* BOTONES */
+/* =============================================
+   BOTONES GENERALES
+============================================= */
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
+
   min-height: 56px;
   padding: 0 26px;
+
   border-radius: 10px;
+
   font-family: var(--font-tech);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .35px;
+
   transition:
     transform .3s,
     box-shadow .3s,
@@ -187,7 +199,6 @@ h4 {
 }
 
 .button-primary {
-  color: white;
   background: linear-gradient(110deg,#ab8aff,#7554ed);
   box-shadow: 0 13px 40px rgba(113,77,224,.24);
 }
@@ -196,7 +207,7 @@ h4 {
   box-shadow: 0 20px 50px rgba(113,77,224,.45);
 }
 
-.button-primary span {
+.button-primary > span {
   font-size: 22px;
 }
 
@@ -209,34 +220,43 @@ h4 {
   background: rgba(255,255,255,.09);
 }
 
-.small-play {
+.play-icon {
   display: grid;
   place-items: center;
+
   width: 28px;
   height: 28px;
+
   border: 1px solid rgba(255,255,255,.32);
   border-radius: 50%;
+
   font-size: 9px;
 }
 
 
-/* NAVIGATION */
+/* =============================================
+   HEADER Y MENÚ
+============================================= */
 
 .header {
   position: sticky;
-  z-index: 1000;
   top: 0;
-  background: rgba(8,9,17,.9);
+  z-index: 1000;
+
+  background: rgba(8,9,16,.9);
+
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
+
   border-bottom: 1px solid var(--line);
 }
 
-.nav {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
+
   min-height: 82px;
 }
 
@@ -247,36 +267,43 @@ h4 {
   flex-shrink: 0;
 }
 
-.logo-mark {
+.logo-icon {
   display: grid;
   place-items: center;
+
   position: relative;
+
   width: 43px;
   height: 43px;
+
   border-radius: 11px;
+
   background: linear-gradient(140deg,#ae8cff,#6641dc);
+
   font-family: var(--font-heading);
   font-size: 34px;
   font-weight: 900;
+
   box-shadow: 0 0 26px rgba(133,94,255,.24);
 }
 
-.logo-mark span {
+.logo-icon span {
   position: absolute;
   right: 4px;
   top: 2px;
+
   color: var(--cyan);
   font-size: 12px;
 }
 
-.logo-word {
+.logo-text {
   font-family: var(--font-tech);
   font-size: 19px;
   font-weight: 700;
   letter-spacing: -.7px;
 }
 
-.logo-word span {
+.logo-text span {
   color: var(--purple);
 }
 
@@ -301,13 +328,18 @@ h4 {
   display: flex;
   align-items: center;
   gap: 13px;
+
   padding: 12px 17px;
+
   border: 1px solid rgba(167,139,250,.4);
   border-radius: 9px;
+
   color: #d4c4ff;
+
   font-family: var(--font-tech);
   font-size: 11px;
   font-weight: 700;
+
   transition: background .25s;
 }
 
@@ -325,13 +357,17 @@ h4 {
 }
 
 
-/* HERO */
+/* =============================================
+   HERO
+============================================= */
 
 .hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+
   padding-top: 105px;
+
   background:
     radial-gradient(
       ellipse at 75% 35%,
@@ -346,34 +382,42 @@ h4 {
   z-index: -2;
   inset: 0;
   opacity: .14;
+
   background-image:
     linear-gradient(rgba(255,255,255,.065) 1px,transparent 1px),
     linear-gradient(90deg,rgba(255,255,255,.065) 1px,transparent 1px);
+
   background-size: 65px 65px;
-  mask-image: linear-gradient(to bottom,transparent,black 30%,transparent);
+
+  mask-image:
+    linear-gradient(to bottom,transparent,black 30%,transparent);
 }
 
 .hero-glow {
   position: absolute;
   z-index: -1;
+
   border-radius: 50%;
   filter: blur(110px);
+
   pointer-events: none;
 }
 
-.glow-purple {
+.hero-glow-purple {
   width: 390px;
   height: 390px;
   right: 0;
   top: 15%;
+
   background: rgba(119,73,229,.27);
 }
 
-.glow-cyan {
+.hero-glow-cyan {
   width: 260px;
   height: 260px;
   right: 22%;
   bottom: -10%;
+
   background: rgba(41,146,189,.15);
 }
 
@@ -385,15 +429,24 @@ h4 {
   min-height: 570px;
 }
 
+.hero-content {
+  min-width: 0;
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+
   padding: 9px 15px;
+
   border-radius: 40px;
   border: 1px solid rgba(167,139,250,.24);
+
   background: rgba(167,139,250,.075);
+
   color: #d6c7ff;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -403,14 +456,17 @@ h4 {
 .eyebrow-dot {
   width: 7px;
   height: 7px;
+
   background: var(--purple);
   border-radius: 50%;
+
   box-shadow: 0 0 14px var(--purple);
 }
 
 .hero h1 {
   margin: 30px 0;
-  font-size: clamp(74px,8vw,112px);
+
+  font-size: clamp(65px,7.8vw,110px);
   font-weight: 900;
   line-height: .91;
   letter-spacing: -1.8px;
@@ -444,7 +500,7 @@ h4 {
   gap: 11px;
 }
 
-.hero-feature-icon {
+.feature-icon {
   color: #bba1ff;
   font-size: 26px;
 }
@@ -466,9 +522,12 @@ h4 {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+
   padding-top: 63px;
   padding-bottom: 29px;
+
   color: #777993;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -480,10 +539,13 @@ h4 {
 }
 
 
-/* HERO TRANSPARENT ANIMATION */
+/* =============================================
+   PREVIEW CSS - ALABA A DIOS
+============================================= */
 
 .hero-preview {
   position: relative;
+  min-width: 0;
   padding: 35px 0;
 }
 
@@ -499,13 +561,18 @@ h4 {
 .preview-window {
   position: relative;
   z-index: 2;
+
   padding: 12px;
+
   border-radius: 19px;
   border: 1px solid rgba(187,165,255,.28);
+
   background: linear-gradient(145deg,#2b2942,#11131f);
+
   box-shadow:
     0 40px 95px rgba(0,0,0,.5),
     0 0 65px rgba(111,73,227,.12);
+
   animation: floatPanel 7s ease-in-out infinite;
 }
 
@@ -514,9 +581,12 @@ h4 {
   align-items: center;
   justify-content: space-between;
   gap: 9px;
+
   min-height: 40px;
   padding: 4px 8px 12px;
+
   color: #aaa8c4;
+
   font-family: var(--font-tech);
   font-size: 9px;
   font-weight: 700;
@@ -546,10 +616,12 @@ h4 {
   background: #7dd6ae;
 }
 
-.toolbar-alpha {
+.alpha-tag {
   padding: 5px 8px;
+
   color: #c8b9f7;
   background: rgba(167,139,250,.14);
+
   border-radius: 5px;
 }
 
@@ -557,31 +629,45 @@ h4 {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+
   display: grid;
   place-items: center;
+
   aspect-ratio: 16/10;
+
   border-radius: 9px;
   border: 1px solid rgba(255,255,255,.08);
+
   background-color: #272838;
+
   background-image:
     linear-gradient(45deg,#343548 25%,transparent 25%),
     linear-gradient(-45deg,#343548 25%,transparent 25%),
     linear-gradient(45deg,transparent 75%,#343548 75%),
     linear-gradient(-45deg,transparent 75%,#343548 75%);
+
   background-size: 34px 34px;
+
   background-position:
-    0 0,0 17px,17px -17px,-17px 0;
+    0 0,
+    0 17px,
+    17px -17px,
+    -17px 0;
 }
 
-.stage-glow {
+.stage-light {
   position: absolute;
   z-index: -1;
+
   width: 65%;
   aspect-ratio: 1;
+
   border-radius: 50%;
   background: #8852e9;
+
   filter: blur(85px);
   opacity: .65;
+
   animation: pulseAura 5s ease-in-out infinite alternate;
 }
 
@@ -589,29 +675,30 @@ h4 {
   position: absolute;
   width: 19px;
   height: 19px;
+
   border-style: solid;
   border-color: rgba(255,255,255,.6);
 }
 
-.top-left {
+.corner-tl {
   top: 18px;
   left: 18px;
   border-width: 2px 0 0 2px;
 }
 
-.top-right {
+.corner-tr {
   top: 18px;
   right: 18px;
   border-width: 2px 2px 0 0;
 }
 
-.bottom-left {
+.corner-bl {
   bottom: 18px;
   left: 18px;
   border-width: 0 0 2px 2px;
 }
 
-.bottom-right {
+.corner-br {
   bottom: 18px;
   right: 18px;
   border-width: 0 2px 2px 0;
@@ -619,65 +706,79 @@ h4 {
 
 .animated-lyrics {
   position: relative;
+  z-index: 2;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   text-align: center;
-  z-index: 2;
+
   filter: drop-shadow(0 10px 15px rgba(0,0,0,.5));
 }
 
 .animated-overline {
-  color: #fff;
+  color: white;
+
   font-family: var(--font-tech);
-  font-size: clamp(10px,1vw,15px);
+  font-size: clamp(9px,1vw,15px);
   font-weight: 700;
   letter-spacing: 5px;
+
   animation: lyricEntrance 5s ease-in-out infinite;
 }
 
 .animated-main {
   color: white;
+
   font-family: var(--font-heading);
-  font-size: clamp(75px,9vw,132px);
+  font-size: clamp(70px,9vw,130px);
   font-weight: 900;
   line-height: .86;
   letter-spacing: -2px;
+
   animation: lyricEntrance 5s ease-in-out infinite .15s;
 }
 
 .animated-impact {
   font-family: var(--font-heading);
-  font-size: clamp(80px,10.5vw,158px);
+  font-size: clamp(73px,10vw,152px);
   font-weight: 900;
   line-height: .85;
   letter-spacing: -3px;
-  background: linear-gradient(
-    180deg,
-    #fff 0%,
-    #e2d0ff 39%,
-    #aa82ff 75%,
-    #7553e9 100%
-  );
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff 0%,
+      #e2d0ff 39%,
+      #aa82ff 75%,
+      #7553e9 100%
+    );
+
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 22px rgba(169,126,255,.4));
+
   animation: lyricImpact 5s ease-in-out infinite .3s;
 }
 
-.animated-bar {
+.animated-line {
   width: 85px;
   height: 4px;
   margin-top: 20px;
+
   border-radius: 5px;
   background: var(--cyan);
+
   box-shadow: 0 0 18px var(--cyan);
+
   animation: lineReveal 5s ease-in-out infinite;
 }
 
 .animated-subtitle {
   margin-top: 15px;
+
   color: #eee8ff;
   font-family: var(--font-tech);
   font-size: 9px;
@@ -685,10 +786,11 @@ h4 {
   letter-spacing: 4px;
 }
 
-.stage-watermark {
+.preview-watermark {
   position: absolute;
   right: 14px;
   bottom: 12px;
+
   color: rgba(255,255,255,.56);
   font-size: 8px;
   letter-spacing: .7px;
@@ -707,81 +809,96 @@ h4 {
 .live-dot {
   width: 7px;
   height: 7px;
+
   border-radius: 50%;
   background: #75e9a9;
+
   box-shadow: 0 0 12px #75e9a9;
 }
 
-.toolbar-formats {
+.mini-formats {
   display: flex;
   gap: 7px;
 }
 
-.toolbar-formats span {
+.mini-formats span {
   padding: 4px 8px;
   border-radius: 5px;
   background: rgba(167,139,250,.14);
   color: #cebbff;
 }
 
-.floating-chip {
+.floating-label {
   position: absolute;
   z-index: 5;
+
   display: flex;
   align-items: center;
   gap: 10px;
+
   padding: 11px 15px;
+
   border: 1px solid rgba(185,159,255,.25);
   border-radius: 10px;
+
   background: rgba(27,24,46,.95);
+
   color: #eee9ff;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
+
   box-shadow: 0 17px 37px rgba(0,0,0,.3);
+
   animation: floatChip 6s ease-in-out infinite;
 }
 
-.floating-chip > span {
+.floating-label > span {
   color: #bca3ff;
   font-size: 21px;
 }
 
-.chip-one {
+.label-one {
   top: 6%;
   right: -6%;
 }
 
-.chip-two {
+.label-two {
   bottom: 12%;
   left: -7%;
   animation-delay: 1s;
 }
 
-.preview-explanation {
+.preview-note {
   position: relative;
   margin-top: 20px;
+
   color: #818198;
   font-size: 10px;
   text-align: center;
 }
 
 
-/* ANIMATIONS */
+/* =============================================
+   ANIMACIONES CSS
+============================================= */
 
 @keyframes floatPanel {
-  0%,100% {
+  0%, 100% {
     transform: translateY(0) rotate(-2deg);
   }
+
   50% {
     transform: translateY(-13px) rotate(-1deg);
   }
 }
 
 @keyframes floatChip {
-  0%,100% {
+  0%, 100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-12px);
   }
@@ -792,6 +909,7 @@ h4 {
     transform: scale(.8);
     opacity: .4;
   }
+
   to {
     transform: scale(1.3);
     opacity: .7;
@@ -799,17 +917,19 @@ h4 {
 }
 
 @keyframes lyricEntrance {
-  0%,10% {
+  0%, 10% {
     opacity: 0;
     transform: translateY(30px);
     filter: blur(12px);
   }
-  28%,75% {
+
+  28%, 75% {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
   }
-  91%,100% {
+
+  91%, 100% {
     opacity: 0;
     transform: translateY(-13px);
     filter: blur(8px);
@@ -817,17 +937,19 @@ h4 {
 }
 
 @keyframes lyricImpact {
-  0%,15% {
+  0%, 15% {
     opacity: 0;
     transform: scale(.6) translateY(30px);
     filter: blur(16px);
   }
-  32%,75% {
+
+  32%, 75% {
     opacity: 1;
     transform: scale(1);
     filter: blur(0);
   }
-  92%,100% {
+
+  92%, 100% {
     opacity: 0;
     transform: scale(1.13);
     filter: blur(10px);
@@ -835,37 +957,46 @@ h4 {
 }
 
 @keyframes lineReveal {
-  0%,20%,95%,100% {
+  0%, 20%, 95%, 100% {
     opacity: 0;
     transform: scaleX(0);
   }
-  35%,77% {
+
+  35%, 77% {
     opacity: 1;
     transform: scaleX(1);
   }
 }
 
 
-/* FEATURE STRIP */
+/* =============================================
+   FRANJA
+============================================= */
 
 .feature-strip {
-  background: linear-gradient(
-    90deg,#251a55,#503b99,#20245c
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #251a55,
+      #503b99,
+      #20245c
+    );
+
   border-top: 1px solid rgba(255,255,255,.14);
   border-bottom: 1px solid rgba(255,255,255,.14);
 }
 
-.strip-inner {
+.strip-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
+
   min-height: 67px;
 }
 
-.strip-inner span {
+.strip-content span {
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -873,26 +1004,76 @@ h4 {
 }
 
 
-/* CATALOG */
+/* =============================================
+   CATÁLOGO
+============================================= */
 
 .catalog {
   background: #0d0f1a;
   border-bottom: 1px solid var(--line);
 }
 
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--line);
+
+  color: #ded8ed;
+
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.catalog-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #b8b0d2;
+  font-size: 10px;
+}
+
+.catalog-status span {
+  width: 7px;
+  height: 7px;
+
+  background: #70e7a8;
+  border-radius: 50%;
+
+  box-shadow: 0 0 12px #70e7a8;
+}
+
+
+/* =============================================
+   PRODUCTO ALABA
+============================================= */
+
 .product-card {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: 1.04fr 1fr;
+
   overflow: hidden;
+
   border-radius: 22px;
   border: 1px solid rgba(172,143,255,.24);
+
   background: linear-gradient(145deg,#1b1c2c,#131521);
+
   box-shadow: 0 30px 70px rgba(0,0,0,.23);
 }
 
 .product-left {
   min-width: 0;
   padding: 24px;
+
   background:
     radial-gradient(
       ellipse at 50% 20%,
@@ -900,6 +1081,7 @@ h4 {
       transparent 65%
     ),
     #11131f;
+
   border-right: 1px solid var(--line);
 }
 
@@ -908,8 +1090,11 @@ h4 {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
+
   margin-bottom: 19px;
+
   color: #9998b1;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -918,37 +1103,71 @@ h4 {
 
 .product-featured {
   padding: 7px 11px;
+
   background: rgba(167,139,250,.14);
+
   color: #d0beff;
+
   border: 1px solid rgba(167,139,250,.23);
   border-radius: 5px;
 }
 
+
+/* =============================================
+   VIDEO DE ALABA
+
+   HTML:
+   media-alaba/ALABA_A_REFF_INICIO.mp4
+
+   POSTER:
+   media-alaba/portada.jpg
+============================================= */
+
 .video-frame {
   position: relative;
   overflow: hidden;
+
   border-radius: 13px;
   border: 1px solid rgba(183,156,255,.23);
+
   background: #090a13;
+
   box-shadow: 0 19px 42px rgba(0,0,0,.32);
 }
 
 .product-video {
   display: block;
+
   width: 100%;
-  aspect-ratio: 16/9;
   height: auto;
+
+  aspect-ratio: 16/9;
   object-fit: contain;
+
   background: #090a13;
 }
+
+/*
+El MP4 se reproduce mediante HTML5.
+
+Si deseas cambiar el video de muestra,
+modifica únicamente el src del HTML.
+
+CSS no elimina los fondos incrustados
+dentro de los archivos de video.
+*/
+
 
 .preview-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
+
   padding: 20px 2px;
+
   color: #999ab2;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -959,14 +1178,17 @@ h4 {
   display: flex;
   align-items: center;
   gap: 9px;
+
   color: #d4c8f5;
 }
 
 .preview-meta-live span {
   width: 7px;
   height: 7px;
+
   background: #6fe5a5;
   border-radius: 50%;
+
   box-shadow: 0 0 12px #6fe5a5;
 }
 
@@ -974,19 +1196,26 @@ h4 {
   display: flex;
   align-items: flex-start;
   gap: 14px;
+
   padding: 20px;
+
   border: 1px solid rgba(167,139,250,.15);
   border-radius: 12px;
+
   background: rgba(167,139,250,.06);
 }
 
 .preview-message-icon {
   flex: 0 0 38px;
+
   display: grid;
   place-items: center;
+
   height: 38px;
+
   border-radius: 9px;
   background: rgba(167,139,250,.15);
+
   color: #c9b3ff;
   font-size: 12px;
 }
@@ -998,13 +1227,32 @@ h4 {
 
 .preview-message p {
   color: #a0a0b9;
+
   font-size: 12px;
   line-height: 1.85;
+
   margin-top: 7px;
 }
 
+.preview-extra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
 
-/* PRODUCT DETAILS */
+  margin-top: 25px;
+
+  color: #8f87b0;
+
+  font-family: var(--font-tech);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+
+/* =============================================
+   INFORMACIÓN DE CANCIÓN
+============================================= */
 
 .product-right {
   min-width: 0;
@@ -1021,6 +1269,7 @@ h4 {
 .product-kicker,
 .product-code {
   color: #b6a1e5;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -1040,7 +1289,9 @@ h4 {
 
 .product-artist {
   margin-top: 11px;
+
   color: #c0aaff;
+
   font-family: var(--font-tech);
   font-size: 17px;
   font-weight: 700;
@@ -1050,8 +1301,11 @@ h4 {
 .product-accent {
   width: 78px;
   height: 3px;
+
   margin: 25px 0;
+
   background: linear-gradient(90deg,#ac89ff,#75e7f2);
+
   border-radius: 5px;
   box-shadow: 0 0 18px rgba(167,139,250,.35);
 }
@@ -1066,30 +1320,39 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+
   margin: 23px 0;
 }
 
 .product-tags span {
   padding: 7px 9px;
+
   border: 1px solid rgba(167,139,250,.18);
   border-radius: 5px;
+
   background: rgba(167,139,250,.06);
+
   color: #c4b9e0;
+
   font-family: var(--font-tech);
   font-size: 9px;
   font-weight: 700;
 }
 
 
-/* ============================================
-   WHAT'S INCLUDED
-   IMAGE: media/archivos.jpg
-============================================ */
+/* =============================================
+   ¿QUÉ INCLUYE ESTE PRODUCTO?
+
+   NUEVA IMAGEN:
+   media-alaba/archivos.webp
+============================================= */
 
 .product-includes {
-  border: 1px solid rgba(167,139,250,.22);
+  border: 1px solid rgba(167,139,250,.23);
   border-radius: 13px;
+
   background: rgba(167,139,250,.055);
+
   overflow: hidden;
 }
 
@@ -1097,30 +1360,35 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+
   list-style: none;
   cursor: pointer;
+
   padding: 18px;
-  color: #e9e2ff;
+
+  color: #ede5ff;
+
   font-family: var(--font-tech);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .1px;
+
   transition: background .2s;
 }
 
 .product-includes > summary:hover {
-  background: rgba(167,139,250,.07);
+  background: rgba(167,139,250,.075);
 }
 
 .product-includes > summary::-webkit-details-marker {
   display: none;
 }
 
-.product-includes > summary > span:first-child {
-  display: flex;
+.includes-summary-title {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 }
 
 .includes-symbol {
@@ -1132,6 +1400,7 @@ h4 {
   color: #c5aaff;
   font-size: 24px;
   line-height: 1;
+
   transition: transform .25s;
 }
 
@@ -1140,7 +1409,7 @@ h4 {
 }
 
 .product-includes[open] > summary {
-  border-bottom: 1px solid rgba(167,139,250,.16);
+  border-bottom: 1px solid rgba(167,139,250,.18);
 }
 
 .includes-content {
@@ -1149,22 +1418,27 @@ h4 {
 
 .includes-intro strong {
   display: block;
+
   color: #e2d8fc;
+
   font-family: var(--font-tech);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: .5px;
+  letter-spacing: .4px;
 }
 
 .includes-intro p {
-  color: #a0a0ba;
-  margin-top: 7px;
+  margin-top: 8px;
+
+  color: #a2a2bc;
   font-size: 12px;
   line-height: 1.85;
 }
 
 
-/* IMAGE OF INCLUDED FILES */
+/* =============================================
+   IMAGEN archivos.webp
+============================================= */
 
 .included-files {
   margin-top: 18px;
@@ -1173,56 +1447,84 @@ h4 {
 .included-image-link {
   position: relative;
   display: block;
+
   overflow: hidden;
-  border: 1px solid rgba(190,166,255,.23);
+
+  border: 1px solid rgba(190,166,255,.25);
   border-radius: 11px;
+
   background: #0b0d16;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
 }
 
 .included-image-link img {
   display: block;
+
   width: 100%;
   height: auto;
+
   object-fit: contain;
-  transition: transform .35s ease;
+
+  transition:
+    transform .35s ease,
+    filter .35s ease;
 }
 
 .included-image-link:hover img {
-  transform: scale(1.025);
+  transform: scale(1.035);
+  filter: brightness(.88);
 }
 
 .image-zoom-label {
   position: absolute;
   right: 12px;
   bottom: 12px;
+
   display: inline-flex;
   align-items: center;
   gap: 8px;
+
   padding: 9px 12px;
+
   border: 1px solid rgba(255,255,255,.2);
   border-radius: 7px;
-  background: rgba(13,12,24,.91);
-  color: #fff;
+
+  background: rgba(13,12,24,.92);
+
+  color: white;
+
   font-family: var(--font-tech);
   font-size: 9px;
   font-weight: 700;
+
   box-shadow: 0 8px 20px rgba(0,0,0,.3);
+
+  transition: background .2s;
 }
 
-.image-zoom-label span {
+.included-image-link:hover .image-zoom-label {
+  background: #6241c5;
+}
+
+.image-zoom-label > span {
   color: #d4c2ff;
   font-size: 18px;
+  line-height: 1;
 }
 
 .included-files figcaption {
-  margin-top: 9px;
+  margin-top: 10px;
+
   color: #9292ad;
   font-size: 10px;
   text-align: center;
 }
 
 
-/* INCLUDED FEATURES */
+/* =============================================
+   CARACTERÍSTICAS INCLUIDAS
+============================================= */
 
 .included-features {
   display: grid;
@@ -1234,19 +1536,27 @@ h4 {
   display: flex;
   align-items: flex-start;
   gap: 11px;
-  padding: 12px;
+
+  padding: 13px;
+
   background: rgba(255,255,255,.025);
+
   border: 1px solid rgba(255,255,255,.065);
   border-radius: 9px;
 }
 
 .included-check {
   flex: 0 0 25px;
+
   display: grid;
   place-items: center;
+
   height: 25px;
+
   border-radius: 7px;
+
   background: rgba(104,222,171,.13);
+
   color: #7ce3b3;
   font-size: 14px;
   font-weight: 700;
@@ -1254,6 +1564,7 @@ h4 {
 
 .included-feature strong {
   display: block;
+
   color: #eeebf8;
   font-size: 11px;
 }
@@ -1261,18 +1572,22 @@ h4 {
 .included-feature small {
   display: block;
   margin-top: 3px;
+
   color: #9c9db4;
   font-size: 10px;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .includes-note {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin-top: 16px;
+
+  margin-top: 17px;
   padding: 13px;
+
   border-radius: 8px;
+
   background: rgba(117,161,241,.07);
 }
 
@@ -1284,23 +1599,27 @@ h4 {
 .includes-note p {
   color: #a5acc3;
   font-size: 10px;
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 
-/* PURCHASE SECTION */
+/* =============================================
+   SELECCIÓN DE FORMATO
+============================================= */
 
 .purchase-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  margin-top: 27px;
-  margin-bottom: 16px;
+
+  margin-top: 28px;
+  margin-bottom: 17px;
 }
 
-.purchase-heading > div > span {
+.purchase-heading-title {
   color: #eee9ff;
+
   font-family: var(--font-tech);
   font-size: 12px;
   font-weight: 700;
@@ -1308,9 +1627,10 @@ h4 {
 }
 
 .purchase-heading p {
+  margin-top: 6px;
+
   color: #8e8fa8;
   font-size: 11px;
-  margin-top: 5px;
 }
 
 .purchase-arrow {
@@ -1319,16 +1639,22 @@ h4 {
 }
 
 
-/* PURCHASE BUTTONS */
+/* =============================================
+   BOTONES DE COMPRA
+============================================= */
 
 .purchase-option {
   display: flex;
   align-items: center;
   gap: 12px;
+
   min-height: 93px;
+
   padding: 13px;
   margin-bottom: 11px;
+
   border-radius: 12px;
+
   transition:
     transform .28s,
     border-color .28s,
@@ -1339,51 +1665,79 @@ h4 {
   transform: translateY(-4px);
 }
 
+
+/* MOV - PROPRESENTER */
+
 .option-pro {
-  background: linear-gradient(
-    110deg,
-    rgba(110,66,221,.22),
-    rgba(71,44,130,.08)
-  );
+  background:
+    linear-gradient(
+      110deg,
+      rgba(110,66,221,.22),
+      rgba(71,44,130,.08)
+    );
+
   border: 1px solid rgba(168,139,250,.35);
 }
 
 .option-pro:hover {
   border-color: #ad91ff;
+
   box-shadow: 0 14px 30px rgba(118,77,224,.2);
 }
 
+
+/* WEBM - FREESHOW */
+
 .option-free {
-  background: linear-gradient(
-    110deg,
-    rgba(40,157,185,.18),
-    rgba(23,100,130,.07)
-  );
+  background:
+    linear-gradient(
+      110deg,
+      rgba(40,157,185,.18),
+      rgba(23,100,130,.07)
+    );
+
   border: 1px solid rgba(107,217,235,.3);
 }
 
 .option-free:hover {
   border-color: #75e7f2;
+
   box-shadow: 0 14px 30px rgba(49,171,204,.15);
 }
 
+
+/* =============================================
+   LOGOS DE PROPRESENTER Y FREESHOW
+============================================= */
+
 .purchase-software-logo {
   flex: 0 0 62px;
+
   display: grid;
   place-items: center;
+
   height: 62px;
   padding: 9px;
+
   border-radius: 11px;
   border: 1px solid rgba(255,255,255,.09);
+
   background: rgba(0,0,0,.2);
 }
 
 .purchase-software-logo img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: contain;
 }
+
+
+/* =============================================
+   DESCRIPCIÓN DE COMPRA
+============================================= */
 
 .purchase-description {
   display: flex;
@@ -1394,7 +1748,9 @@ h4 {
 
 .purchase-format {
   margin-bottom: 3px;
+
   color: #bea6ff;
+
   font-family: var(--font-tech);
   font-size: 9px;
   font-weight: 700;
@@ -1407,6 +1763,7 @@ h4 {
 
 .purchase-description strong {
   color: white;
+
   font-family: var(--font-tech);
   font-size: 17px;
   line-height: 1.35;
@@ -1414,9 +1771,15 @@ h4 {
 
 .purchase-description small {
   margin-top: 4px;
+
   color: #abaac2;
   font-size: 10px;
 }
+
+
+/* =============================================
+   PRECIO: $5
+============================================= */
 
 .purchase-price {
   display: flex;
@@ -1427,6 +1790,7 @@ h4 {
 
 .purchase-price strong {
   color: white;
+
   font-family: var(--font-heading);
   font-size: 38px;
   font-weight: 900;
@@ -1435,6 +1799,7 @@ h4 {
 
 .purchase-price small {
   color: #baa2ff;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -1446,9 +1811,12 @@ h4 {
 
 .purchase-link-icon {
   align-self: flex-start;
+  flex-shrink: 0;
+
   color: #cbb8ff;
   font-size: 21px;
   line-height: 1;
+
   transition: transform .25s;
 }
 
@@ -1460,11 +1828,17 @@ h4 {
   transform: translate(3px,-3px);
 }
 
+
+/* =============================================
+   INFORMACIÓN DE PAGO
+============================================= */
+
 .payment-info {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+
   margin-top: 18px;
 }
 
@@ -1482,7 +1856,9 @@ h4 {
 .product-contact {
   display: block;
   margin-top: 19px;
+
   color: #c8b2ff;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -1495,30 +1871,40 @@ h4 {
 }
 
 
-/* CATALOG BOTTOM */
+/* =============================================
+   CATÁLOGO - CONTACTO
+============================================= */
 
 .catalog-bottom {
   display: flex;
   align-items: center;
   gap: 19px;
+
   margin-top: 42px;
   padding: 26px;
+
   border: 1px solid rgba(167,139,250,.22);
   border-radius: 14px;
-  background: linear-gradient(
-    110deg,
-    rgba(104,63,203,.16),
-    rgba(20,21,36,.7)
-  );
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(104,63,203,.16),
+      rgba(20,21,36,.7)
+    );
 }
 
 .catalog-bottom-icon {
   flex: 0 0 48px;
+
   display: grid;
   place-items: center;
+
   height: 48px;
+
   border-radius: 11px;
   background: rgba(167,139,250,.13);
+
   color: #c5acff;
   font-size: 25px;
 }
@@ -1540,14 +1926,18 @@ h4 {
 
 .catalog-bottom a {
   color: #cdb8ff;
+
   font-family: var(--font-tech);
   font-size: 11px;
   font-weight: 700;
+
   white-space: nowrap;
 }
 
 
-/* FORMAT SECTION */
+/* =============================================
+   FORMATOS
+============================================= */
 
 .formats {
   background:
@@ -1567,14 +1957,20 @@ h4 {
 
 .format-card {
   position: relative;
+
   display: flex;
   flex-direction: column;
+
   min-width: 0;
   min-height: 610px;
+
   padding: 38px;
+
   overflow: hidden;
+
   border: 1px solid var(--line);
   border-radius: 21px;
+
   transition:
     transform .3s,
     border-color .3s;
@@ -1609,7 +2005,9 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   color: #b6aacd;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -1624,12 +2022,16 @@ h4 {
 .format-logo {
   display: grid;
   place-items: center;
+
   width: 76px;
   height: 76px;
+
   margin-top: 34px;
   padding: 13px;
+
   border-radius: 15px;
   border: 1px solid rgba(167,139,250,.2);
+
   background: rgba(167,139,250,.11);
 }
 
@@ -1646,7 +2048,9 @@ h4 {
 
 .format-large {
   margin-top: 7px;
+
   color: rgba(206,184,255,.15);
+
   font-family: var(--font-heading);
   font-size: clamp(105px,12vw,168px);
   font-weight: 900;
@@ -1660,6 +2064,7 @@ h4 {
 
 .format-software {
   color: #c3b0ff;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -1672,6 +2077,7 @@ h4 {
 
 .format-card h3 {
   margin: 14px 0;
+
   font-size: clamp(38px,4vw,51px);
   font-weight: 800;
 }
@@ -1686,13 +2092,16 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+
   margin: 26px 0;
 }
 
 .format-points span {
   padding: 7px 10px;
+
   border-radius: 6px;
   border: 1px solid rgba(255,255,255,.12);
+
   color: #d5cee9;
   font-size: 11px;
 }
@@ -1701,10 +2110,14 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   margin-top: auto;
   padding-top: 22px;
+
   border-top: 1px solid rgba(255,255,255,.15);
+
   color: #e0d4ff;
+
   font-family: var(--font-tech);
   font-size: 12px;
   font-weight: 700;
@@ -1722,6 +2135,7 @@ h4 {
 .formats-notice {
   max-width: 720px;
   margin: 26px auto 0;
+
   color: #7f809a;
   font-size: 11px;
   line-height: 1.85;
@@ -1729,10 +2143,13 @@ h4 {
 }
 
 
-/* PROCESS */
+/* =============================================
+   CÓMO FUNCIONA
+============================================= */
 
 .process {
   background: #0d0f1a;
+
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -1745,12 +2162,17 @@ h4 {
 
 .process-card {
   position: relative;
+
   min-height: 245px;
   padding: 26px;
+
   border: 1px solid var(--line);
   border-radius: 15px;
+
   background: #171926;
+
   overflow: hidden;
+
   transition:
     transform .3s,
     border-color .3s;
@@ -1765,7 +2187,9 @@ h4 {
   position: absolute;
   right: 15px;
   top: 5px;
+
   color: rgba(167,139,250,.12);
+
   font-family: var(--font-heading);
   font-size: 78px;
   font-weight: 900;
@@ -1775,12 +2199,17 @@ h4 {
 .process-icon {
   display: grid;
   place-items: center;
+
   width: 52px;
   height: 52px;
+
   margin-bottom: 28px;
+
   border: 1px solid rgba(167,139,250,.2);
   border-radius: 11px;
+
   background: rgba(167,139,250,.1);
+
   color: #cab6ff;
   font-size: 27px;
 }
@@ -1797,7 +2226,9 @@ h4 {
 }
 
 
-/* TUTORIALS */
+/* =============================================
+   TUTORIALES
+============================================= */
 
 .tutorials {
   background: var(--bg);
@@ -1812,9 +2243,12 @@ h4 {
 .tutorial-card {
   min-width: 0;
   overflow: hidden;
+
   border: 1px solid var(--line);
   border-radius: 18px;
+
   background: #171925;
+
   transition:
     transform .3s,
     border-color .3s;
@@ -1845,7 +2279,9 @@ h4 {
   display: flex;
   align-items: center;
   gap: 10px;
+
   color: #bda8f5;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -1860,6 +2296,7 @@ h4 {
 
 .tutorial-body h3 {
   margin: 19px 0;
+
   font-size: clamp(34px,4vw,46px);
   font-weight: 800;
 }
@@ -1872,17 +2309,23 @@ h4 {
 
 .tutorial-link {
   display: inline-block;
+
   margin-top: 25px;
   padding-bottom: 8px;
+
   border-bottom: 1px solid rgba(167,139,250,.5);
+
   color: #c7b1ff;
+
   font-family: var(--font-tech);
   font-size: 11px;
   font-weight: 700;
 }
 
 
-/* INSPIRATION */
+/* =============================================
+   MENSAJE MOTIVACIONAL
+============================================= */
 
 .inspiration {
   padding: 25px 0 110px;
@@ -1892,26 +2335,38 @@ h4 {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+
   min-height: 470px;
   padding: 75px 65px;
+
   border: 1px solid rgba(185,151,255,.32);
   border-radius: 24px;
-  background: linear-gradient(115deg,#2b1e65,#422c87,#1f265c);
+
+  background:
+    linear-gradient(
+      115deg,
+      #2b1e65,
+      #422c87,
+      #1f265c
+    );
 }
 
 .inspiration-glow {
   position: absolute;
   z-index: -1;
   inset: -50%;
-  background: radial-gradient(
-    circle,
-    rgba(162,114,255,.23),
-    transparent 57%
-  );
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(162,114,255,.23),
+      transparent 57%
+    );
 }
 
 .inspiration-kicker {
   color: #ded0ff;
+
   font-family: var(--font-tech);
   font-size: 11px;
   font-weight: 700;
@@ -1920,6 +2375,7 @@ h4 {
 
 .inspiration-panel h2 {
   margin-top: 24px;
+
   font-size: clamp(73px,9vw,120px);
   font-weight: 900;
   line-height: .85;
@@ -1938,6 +2394,7 @@ h4 {
 .inspiration-panel p {
   max-width: 510px;
   margin: 28px 0 32px;
+
   color: #c9c0e6;
   font-size: 14px;
   line-height: 1.9;
@@ -1952,14 +2409,18 @@ h4 {
   position: absolute;
   right: -40px;
   bottom: -100px;
+
   color: rgba(255,255,255,.065);
   font-size: 450px;
   line-height: 1;
+
   pointer-events: none;
 }
 
 
-/* FAQ */
+/* =============================================
+   PREGUNTAS FRECUENTES
+============================================= */
 
 .faq {
   background: #0e101b;
@@ -1980,6 +2441,7 @@ h4 {
 .faq-intro p {
   max-width: 340px;
   margin-top: 20px;
+
   color: #a2a2ba;
   font-size: 14px;
   line-height: 1.9;
@@ -1989,8 +2451,11 @@ h4 {
   display: inline-block;
   margin-top: 28px;
   padding-bottom: 8px;
+
   border-bottom: 1px solid rgba(167,139,250,.5);
+
   color: #cbb6ff;
+
   font-family: var(--font-tech);
   font-size: 11px;
   font-weight: 700;
@@ -2006,13 +2471,17 @@ h4 {
 
 .faq-items summary {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
+
   padding: 23px 0;
+
   cursor: pointer;
   list-style: none;
+
   color: #e8e3f5;
+
   font-size: 14px;
   font-weight: 700;
 }
@@ -2033,25 +2502,36 @@ h4 {
 
 .faq-items details p {
   padding: 0 30px 24px 0;
+
   color: #a5a5bd;
   font-size: 13px;
   line-height: 1.9;
 }
 
 
-/* CONTACT */
+/* =============================================
+   CONTACTO
+============================================= */
 
 .contact-banner {
   padding: 65px 0;
+
   border-top: 1px solid rgba(255,255,255,.13);
   border-bottom: 1px solid rgba(255,255,255,.13);
-  background: linear-gradient(110deg,#241a4e,#38296c,#192841);
+
+  background:
+    linear-gradient(
+      110deg,
+      #241a4e,
+      #38296c,
+      #192841
+    );
 }
 
 .contact-grid {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 40px;
 }
 
@@ -2066,6 +2546,7 @@ h4 {
 
 .contact-grid p {
   margin-top: 15px;
+
   color: #c2b9d8;
   font-size: 13px;
 }
@@ -2075,15 +2556,21 @@ h4 {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
+
   min-width: 270px;
   min-height: 64px;
+
   padding: 0 24px;
+
   border-radius: 10px;
+
   background: white;
   color: #30224f;
+
   font-family: var(--font-tech);
   font-size: 11px;
   font-weight: 700;
+
   transition: transform .25s;
 }
 
@@ -2096,7 +2583,9 @@ h4 {
 }
 
 
-/* FOOTER */
+/* =============================================
+   FOOTER
+============================================= */
 
 .footer {
   padding-top: 78px;
@@ -2107,11 +2596,13 @@ h4 {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 60px;
+
   padding-bottom: 70px;
 }
 
 .footer-brand p {
   margin-top: 24px;
+
   color: #9697ae;
   font-size: 13px;
   line-height: 2;
@@ -2126,7 +2617,9 @@ h4 {
 
 .footer-links h4 {
   margin-bottom: 13px;
+
   color: #ebe4ff;
+
   font-family: var(--font-tech);
   font-size: 11px;
   letter-spacing: 1.4px;
@@ -2143,18 +2636,24 @@ h4 {
 }
 
 
-/* BIBLE MESSAGE */
+/* =============================================
+   MENSAJE BÍBLICO
+============================================= */
 
 .bible-message {
   padding: 70px 24px;
+
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+
   text-align: center;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(111,75,216,.08),
-    transparent 65%
-  );
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(111,75,216,.08),
+      transparent 65%
+    );
 }
 
 .bible-star {
@@ -2166,7 +2665,9 @@ h4 {
 .bible-label {
   display: block;
   margin-top: 13px;
+
   color: #bba9f2;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -2175,6 +2676,7 @@ h4 {
 
 .bible-message blockquote {
   margin: 25px auto 15px;
+
   font-family: var(--font-heading);
   font-size: clamp(36px,5vw,59px);
   font-weight: 700;
@@ -2183,6 +2685,7 @@ h4 {
 
 .bible-reference {
   color: #bea7ff;
+
   font-family: var(--font-tech);
   font-size: 11px;
   font-weight: 700;
@@ -2192,6 +2695,7 @@ h4 {
 .bible-message p {
   max-width: 580px;
   margin: 27px auto 22px;
+
   color: #a2a1b9;
   font-size: 14px;
   line-height: 2;
@@ -2199,6 +2703,7 @@ h4 {
 
 .bible-signature {
   color: #7b7694;
+
   font-family: var(--font-tech);
   font-size: 10px;
   font-weight: 700;
@@ -2207,11 +2712,14 @@ h4 {
 
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
+
   padding: 28px 0;
+
   color: #74758e;
+
   font-family: var(--font-tech);
   font-size: 9px;
   font-weight: 700;
@@ -2219,22 +2727,32 @@ h4 {
 }
 
 
-/* FLOATING WHATSAPP */
+/* =============================================
+   WHATSAPP FLOTANTE
+============================================= */
 
 .whatsapp-float {
   position: fixed;
   z-index: 2000;
+
   right: 25px;
   bottom: 26px;
+
   display: grid;
   place-items: center;
+
   width: 62px;
   height: 62px;
+
   border-radius: 50%;
   background: #25d366;
+
   color: white;
+
   box-shadow: 0 10px 30px rgba(37,211,102,.34);
+
   animation: whatsappPulse 3s ease-in-out infinite;
+
   transition:
     transform .25s,
     box-shadow .25s;
@@ -2247,23 +2765,32 @@ h4 {
 
 .whatsapp-float:hover {
   transform: scale(1.1);
+
   box-shadow: 0 15px 40px rgba(37,211,102,.5);
 }
 
 .whatsapp-tooltip {
   position: absolute;
   right: 75px;
+
   padding: 11px 15px;
+
   border-radius: 9px;
-  background: #fff;
+
+  background: white;
   color: #171820;
+
   white-space: nowrap;
+
   font-size: 12px;
   font-weight: 700;
+
   box-shadow: 0 12px 30px rgba(0,0,0,.22);
+
   opacity: 0;
   visibility: hidden;
   transform: translateX(8px);
+
   transition: .25s;
 }
 
@@ -2274,9 +2801,10 @@ h4 {
 }
 
 @keyframes whatsappPulse {
-  0%,100% {
+  0%, 100% {
     box-shadow: 0 10px 30px rgba(37,211,102,.33);
   }
+
   50% {
     box-shadow:
       0 10px 30px rgba(37,211,102,.52),
@@ -2285,7 +2813,9 @@ h4 {
 }
 
 
-/* ACCESSIBILITY */
+/* =============================================
+   ACCESIBILIDAD
+============================================= */
 
 a:focus-visible,
 summary:focus-visible,
@@ -2296,7 +2826,9 @@ label:focus-visible {
 }
 
 
-/* RESPONSIVE TABLETS */
+/* =============================================
+   TABLETS
+============================================= */
 
 @media (max-width: 1100px) {
 
@@ -2309,7 +2841,7 @@ label:focus-visible {
   }
 
   .hero h1 {
-    font-size: clamp(63px,8vw,95px);
+    font-size: clamp(60px,7.4vw,92px);
   }
 
   .product-card {
@@ -2346,19 +2878,23 @@ label:focus-visible {
 }
 
 
-/* NAV MOBILE */
+/* =============================================
+   MENÚ MÓVIL SIN JAVASCRIPT
+============================================= */
 
 @media (max-width: 850px) {
 
-  .nav {
+  .navbar {
     min-height: 73px;
   }
 
   .menu-toggle {
     display: block;
+
     position: absolute;
     width: 1px;
     height: 1px;
+
     opacity: 0;
   }
 
@@ -2367,16 +2903,21 @@ label:focus-visible {
     flex-direction: column;
     justify-content: center;
     gap: 6px;
+
     width: 40px;
     height: 40px;
+
     cursor: pointer;
   }
 
   .menu-button span {
     width: 27px;
     height: 2px;
+
     border-radius: 3px;
+
     background: #e8e1ff;
+
     transition:
       transform .3s,
       opacity .3s;
@@ -2389,16 +2930,22 @@ label:focus-visible {
 
   .nav-links {
     display: none;
+
     position: absolute;
     top: 73px;
     left: 0;
     right: 0;
+
     flex-direction: column;
     align-items: stretch;
     gap: 20px;
+
     padding: 27px 25px;
+
     background: #111320;
+
     border-bottom: 1px solid var(--line);
+
     box-shadow: 0 25px 45px rgba(0,0,0,.34);
   }
 
@@ -2429,7 +2976,9 @@ label:focus-visible {
 }
 
 
-/* MOBILE */
+/* =============================================
+   CELULARES
+============================================= */
 
 @media (max-width: 767px) {
 
@@ -2441,11 +2990,11 @@ label:focus-visible {
     padding: 75px 0;
   }
 
-  .logo-word {
+  .logo-text {
     font-size: 17px;
   }
 
-  .logo-mark {
+  .logo-icon {
     width: 39px;
     height: 39px;
     font-size: 30px;
@@ -2482,7 +3031,7 @@ label:focus-visible {
   }
 
   .hero h1 {
-    font-size: clamp(61px,12vw,88px);
+    font-size: clamp(59px,12vw,88px);
     letter-spacing: -1px;
   }
 
@@ -2512,16 +3061,16 @@ label:focus-visible {
     letter-spacing: 3px;
   }
 
-  .floating-chip {
+  .floating-label {
     padding: 9px 11px;
     font-size: 9px;
   }
 
-  .chip-one {
+  .label-one {
     right: -9%;
   }
 
-  .chip-two {
+  .label-two {
     left: -9%;
   }
 
@@ -2531,20 +3080,20 @@ label:focus-visible {
   }
 
 
-  /* STRIP */
+  /* FRANJA */
 
-  .strip-inner {
+  .strip-content {
     justify-content: center;
     gap: 13px 22px;
     padding: 20px 0;
   }
 
-  .strip-inner span {
+  .strip-content span {
     font-size: 9px;
   }
 
 
-  /* PRODUCT */
+  /* PRODUCTO */
 
   .product-card {
     grid-template-columns: 1fr;
@@ -2552,6 +3101,7 @@ label:focus-visible {
 
   .product-left {
     padding: 17px;
+
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
@@ -2570,6 +3120,7 @@ label:focus-visible {
 
   .purchase-option {
     gap: 12px;
+
     min-height: 88px;
     padding: 11px;
   }
@@ -2598,7 +3149,7 @@ label:focus-visible {
   }
 
 
-  /* FORMATS */
+  /* FORMATOS */
 
   .format-grid {
     grid-template-columns: 1fr;
@@ -2615,7 +3166,7 @@ label:focus-visible {
   }
 
 
-  /* PROCESS */
+  /* CÓMO FUNCIONA */
 
   .process-grid {
     grid-template-columns: repeat(2,minmax(0,1fr));
@@ -2634,7 +3185,9 @@ label:focus-visible {
   .process-icon {
     width: 46px;
     height: 46px;
+
     margin-bottom: 24px;
+
     font-size: 24px;
   }
 
@@ -2647,7 +3200,7 @@ label:focus-visible {
   }
 
 
-  /* TUTORIALS */
+  /* TUTORIALES */
 
   .tutorial-grid {
     grid-template-columns: 1fr;
@@ -2659,7 +3212,7 @@ label:focus-visible {
   }
 
 
-  /* INSPIRATION */
+  /* INSPIRACIÓN */
 
   .inspiration {
     padding: 0 0 75px;
@@ -2696,7 +3249,7 @@ label:focus-visible {
   }
 
 
-  /* CONTACT */
+  /* CONTACTO */
 
   .contact-grid {
     flex-direction: column;
@@ -2740,6 +3293,7 @@ label:focus-visible {
   .whatsapp-float {
     width: 56px;
     height: 56px;
+
     right: 18px;
     bottom: 20px;
   }
@@ -2752,7 +3306,9 @@ label:focus-visible {
 }
 
 
-/* SMALL PHONES */
+/* =============================================
+   CELULARES PEQUEÑOS
+============================================= */
 
 @media (max-width: 400px) {
 
@@ -2869,7 +3425,9 @@ label:focus-visible {
 }
 
 
-/* REDUCED MOTION */
+/* =============================================
+   REDUCIR MOVIMIENTO
+============================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -2890,7 +3448,7 @@ label:focus-visible {
     filter: none !important;
   }
 
-  .animated-bar {
+  .animated-line {
     opacity: 1 !important;
     transform: none !important;
   }
